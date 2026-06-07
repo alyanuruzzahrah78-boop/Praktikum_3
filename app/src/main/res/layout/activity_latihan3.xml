@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:orientation="vertical"
+    tools:context=".Latihan3">
+
+    <TextView
+        android:id="@+id/Latihan3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Latihan 3-Merubah warna button"
+        android:textAlignment="center"
+        android:textSize="21dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_Pilihan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pilihan:"
+        android:textSize="18dp"
+        android:textStyle="normal" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:entries="@array/warna" />
+
+    <Button
+        android:id="@+id/btProsesLatihanWarna2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proses"
+        app:cornerRadius="20dp" />
+</LinearLayout>
