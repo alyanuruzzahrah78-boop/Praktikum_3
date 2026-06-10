@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+
+    <!-- Header Ungu -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#6200EE"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Praktikum3"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="15dp"/>
+
+    </LinearLayout>
+
+
+    <!-- Isi -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tugas 1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"/>
+
+
+        <!-- Lampu -->
+        <ImageView
+            android:id="@+id/imgLampu"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_lamp_light_off" />
+
+
+        <!-- Status Lampu -->
+        <Button
+            android:id="@+id/btnToggle"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#6200EE"
+            android:text="TURN OFF"
+            android:textColor="#FFFFFF" />
+
+
+        <!-- Radio Button -->
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+
+            <RadioButton
+                android:id="@+id/rbPutih"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Putih"/>
+
+
+            <RadioButton
+                android:id="@+id/rbKuning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kuning"/>
+
+
+            <RadioButton
+                android:id="@+id/rbBiru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Biru"/>
+
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

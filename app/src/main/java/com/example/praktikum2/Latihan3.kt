@@ -6,16 +6,16 @@ import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat.enableEdgeToEdge
 import androidx.core.view.WindowInsetsCompat
 
 class Latihan3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        delegate.localNightMode = AppCompatActivity.MODE_NO_LOCALIZED_COLLATORS
+        delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
         setContentView(R.layout.activity_latihan3)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -27,8 +27,8 @@ class Latihan3 : AppCompatActivity() {
         val btProsesLatihanWarna2 = findViewById<Button>(R.id.btProsesLatihanWarna2)
 
         btProsesLatihanWarna2.setOnClickListener {
-            val spinner = spinner.selectedItem.toString()
-            when (spinner) {
+            val warna = spinner.selectedItem.toString()
+            when (warna) {
                 "red" ->
                     btProsesLatihanWarna2.setBackgroundColor(ContextCompat.getColor(this, R.color.red))
                 "green" ->
@@ -36,21 +36,22 @@ class Latihan3 : AppCompatActivity() {
                 "blue" ->
                     btProsesLatihanWarna2.setBackgroundColor(ContextCompat.getColor(this, R.color.blue))
 
-            else -> {
-                val builder = AlertDialog.Builder(this)
-                builder
-                    .setTitle("Peringatan")
-                    .setMessage("Warna akan direset ke awal, apakah anda yakin?")
-                    .setPositiveButton("OK"){
-                        dialog, _ ->
-                        dialog.dismiss()
-                        btProsesLatihanWarna2.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_500))
-                    }
-                    .setNegativeButton("Batal") {
-                        dialog, _ -> dialog.dismiss()
-                    }
-                    .show()
-            }
+                else -> {
+                    val builder = AlertDialog.Builder(this)
+                    builder
+                        .setTitle("Peringatan")
+                        .setMessage("Warna akan direset ke awal, apakah anda yakin?")
+                        .setPositiveButton("OK") { dialog, _ ->
+                            dialog.dismiss()
+                            btProsesLatihanWarna2.setBackgroundColor(
+                                ContextCompat.getColor(this, R.color.purple_500)
+                            )
+                        }
+                        .setNegativeButton("Batal") { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        .show()
+                }
             }
         }
     }
